@@ -1,3 +1,5 @@
+#Vidhi Desai
+#1002081553
 class DisjointSet:
     def __init__(self, vertices):
         self.parent = {v: v for v in vertices}
