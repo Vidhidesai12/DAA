@@ -1,5 +1,3 @@
-#Vidhi Desai
-#1002081553
 def floyd_warshall(graph):
     V = len(graph)
     dist = [[float('inf') for _ in range(V)] for _ in range(V)]
@@ -9,7 +7,7 @@ def floyd_warshall(graph):
         for j in range(V):
             if i == j:
                 dist[i][j] = 0
-            elif graph[i][j] != float('inf'):
+            elif j in graph[i]:
                 dist[i][j] = graph[i][j]
     
     # Calculate shortest paths
@@ -21,12 +19,12 @@ def floyd_warshall(graph):
     return dist
 
 # Example usage:
-graph = [
-    [0, 2, 5, float('inf')],
-    [float('inf'), 0, 1, 2],
-    [float('inf'), float('inf'), 0, 5],
-    [float('inf'), float('inf'), float('inf'), 0]
-]
+graph = {
+    0: {1: 3, 3: 8},
+    1: {0: 3, 2: 1},
+    2: {0: 5, 3: 2},
+    3: {2: 2}
+}
 
 shortest_distances = floyd_warshall(graph)
 print("Shortest distances between all pairs of vertices:")

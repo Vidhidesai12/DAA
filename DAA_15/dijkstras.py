@@ -19,11 +19,12 @@ def dijkstra(graph, start):
 
 # Example usage and output:
 graph = {
-    'A': [('B', 2), ('C', 5)],
-    'B': [('C', 1), ('D', 2)],
-    'C': [('D', 5)],
-    'D': []
+    'A': [('B', 1), ('C', 4)],
+    'B': [('A', 1), ('C', 2), ('D', 5)],
+    'C': [('A', 4), ('B', 2), ('D', 1)],
+    'D': [('B', 5), ('C', 1)]
 }
+
 
 start_vertex = 'A'
 shortest_distances = dijkstra(graph, start_vertex)

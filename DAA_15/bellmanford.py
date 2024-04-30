@@ -19,11 +19,10 @@ def bellman_ford(graph, start):
 
 # Example usage and output:
 graph = {
-    'A': [('B', 2), ('C', 5)],
-    'B': [('C', 1), ('D', 2)],
-    'C': [('D', 5)],
-    'D': []  
-    
+    'A': [('B', -1), ('C', 4)],
+    'B': [('A', 1), ('C',2),('D', 5)],
+    'C': [('D', 1)],
+    'D': [('B', 3), ('C',1)]
 }
 
 start_vertex = 'A'
